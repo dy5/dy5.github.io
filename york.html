@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<title>CrazyFuzzy.com - York Family Tree </title>
+<!-- 
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+ -->
+<meta name="robots" content="NONE,NOARCHIVE">
+<meta name="keywords" content="solitaire,york,crazyfuzzy">
+<link rel="stylesheet" type="text/css" href="static/cf_base.css">
+</head>
+
+<body class="body">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="static/jquery-starfield.js"></script>
+          <script type="application/javascript">
+            $(function(){
+                $('.container').starfield({
+                    starDensity: 1.0,
+                    mouseScale: 0.5
+                });
+            });
+        </script>
+
+<div class="container">
+  <div class="content-overlay">
+
+
+
+    <div class="topnav">
+      <a  href="/">Home</a>
+      <a  href="games.html">Games</a>
+      <a  href="gadgets.html">Gadgets</a>
+      <a  class="active"  href="york.html">York Family Tree</a>
+      <a  href="about.html">About</a>
+    </div>
+
+<h1 align="center">York Family Tree</h1>
+    <div class="content">
+
+    <!-- Content -->
+    
+<style type="text/css">
+/*body {
+      font: 10px sans-serif;
+  }*/
+  .linkClass {
+    text-decoration: underline;
+    /*color: black;*/
+  }
+  .linage {
+      fill: none;
+      stroke:  #fdff2b;
+      /*background-color:  #fdff2b;*/
+      stroke-width: 3;
+  }
+  .marriage {
+      fill: none;
+      stroke: pink;
+      stroke-width: 5;
+  }
+  .direct_man{
+      background-color: #c6011f;
+      border-style: solid;
+      border-width: 3px;
+      box-sizing: border-box;
+      border-color: cyan;
+  }
+  .man {
+      background-color: #c6011f;
+      border-style: solid;
+      border-width: 2px;
+      box-sizing: border-box;
+      border-color: blue;
+  }
+  .woman {
+      background-color: #c6011f;
+      border-style: solid;
+      border-width: 2px;
+      box-sizing: border-box;
+      border-color: pink;
+  }
+  .emphasis{
+      font-family: 'Michroma', sans-serif;
+      font-style: italic;
+      font-size: 10px;
+      color: #fdff2b;
+  }
+  p {
+    padding:0;
+    margin:0;
+  }
+
+  svg {
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .nodeText{
+    font-family: 'Michroma', sans-serif;
+    font-size: 10px;
+    color: #fdff2b;
+  }
+
+}
+</style>
+<div id="content-main">
+
+<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@4/build/d3.min.js"></script>
+<script src="static/dTree.js" type="text/javascript"></script>
+
+<script>
+
+  function buildLink(link) {
+    if (!link) {
+      return "";
+    }
+    return "/york"+link;
+  }
+
+function ready() {
+  var data = [{
+  "name": "William York",
+  "class": "direct_man",
+  // "textClass": "emphasis",
+  "extra": {
+    "years" : "1755 - 1839",
+    "link" : "/william/"
+  },
+  "marriages": [{
+    "spouse": {
+      "name": "Lydia Busson",
+      "class": "woman",
+      "extra" : {
+        "years": "1762 - 1841"
+      }
+    },
+
+    //Child 1 of william
+    "children": [{
+      "name": "Aaron York",
+      "class": "man",
+      "extra": {
+        "years": "1782 - 1820"
+      }
+    }, { //child 2 of william
+      "name": "Joseph York",
+      "class": "man",
+      "extra": {
+        "years": "1783 - 1783"
+      }
+    }, { //child 3 of william
+      "name": "Mary York",
+      "class": "woman",
+      "extra": {
+        "years": "1783 - ?"
+      }
+    }, { //child 4 of william
+      "name": "Newberry York",
+      "class": "direct_man",
+      "extra": {
+        "years": "1784 - 1866",
+        "link" : "/newberry/"
+      },
+      "marriages": [{
+        "spouse": {
+          "name": "Nancy Slade",
+          "class": "woman",
+          "extra": {
+            "years": "1784 - 1874"
+          }
+        },
+        //child 1 of newberry
+        "children": [{
+          "name": "Joseph York",
+          "class": "man",
+          "extra": {
+            "years": "1804 - 1862"
+          }
+        }, { //child 2 of newberry
+          "name": "William York",
+          "class": "man",
+          "extra": {
+            "years": "1806 - 1877"
+          }
+
+        }, { //child 3 of newberry
+          "name": "Jeremiah York",
+          "class": "direct_man",
+          "extra": {
+            "years": "1809 - 1862"
+          },
+          "marriages": [{ //marriage 1 of jeremiah
+            "spouse" : {
+              "name": "Nancy Woods",
+              "class": "woman",
+              "extra": {
+                "years": "1810 - 1845"
+              }
+            },
+
+
+            "children": [{ //first child of first marriage of jeremiah
+              "name" : "Mary York",
+              "class": "woman",
+              "extra": {
+                "years": "1830 - 1894"
+              }
+            }, { //child 2 of marriage 1 of jeremiah
+              "name" : "Lydia York",
+              "class": "woman",
+              "extra": {
+                "years": "1832 - 1876"
+              }
+            }, { //child 3 of marriage 1 of jeremiah
+              "name" : "Catherine Ann York",
+              "class": "woman",
+              "extra": {
+                "years": "1835 - 1855"
+              }
+            }, { //child 4 of marriage 1 of jeremiah
+              "name" : "John G. \"Doc\" York",
+              "class": "direct_man",
+              "extra": {
+                "years": "1836 - 1908"
+              },
+              "marriages": [{
+                "spouse": {
+                  "name": "Hettie Cozier",
+                  "class": "woman",
+                  "extra": {
+                    "years": "1844 - 1878"
+                  }
+                },
+                "children": [{//first child of doc
+                  "name": "Lucinda Ann \"Babe\" York",
+                  "class": "woman",
+                  "extra": {
+                    "years": "1864 - 1926"
+                  }
+                }, { //child 2 of doc
+                  "name": "Ida May York",
+                  "class": "woman",
+                  "extra": {
+                    "years": "1867 - 1941"
+                  }
+                }, { //child 3 of doc
+                  "name": "Harriet Catherine York",
+                  "class": "woman",
+                  "extra": {
+                    "years": "1869 - 1939"
+                  }
+                }, { //child 4 of doc
+                  "name": "Laura Bell York",
+                  "class": "woman",
+                  "extra": {
+                    "years": "1871 - 1929"
+                  }
+                }, { //child 5 of doc
+                  "name": "John E. York",
+                  "class": "man",
+                  "extra": {
+                    "years": "1872 - ?"
+                  }
+                }, { //child 6 of doc
+                  "name": "Harvey York",
+                  "class": "direct_man",
+                  "extra": {
+                    "years": "1872 - 1961"
+                  },
+                  "marriages": [{
+                    "spouse": {
+                      "name": "Lovina Kathryn Wogaman",
+                      "class": "woman",
+                      "extra": {
+                        "years": "1883 - 1956"
+                      }
+                    },
+                    "children": [{ //first child of harvey
+                      "name": "Bertha M. York",
+                      "class": "woman",
+                      "extra": {
+                        "years": "1901 - 1981"
+                      }
+                    }, { //child 2 of harvey
+                      "name": "Willard Morris York",
+                      "class": "man",
+                      "extra": {
+                        "years": "1903 - 1912"
+                      }
+                    }, { //child 3 of harvey
+                      "name": "Harvey Glenn York",
+                      "class": "man",
+                      "extra": {
+                        "years": "1905 - 1954"
+                      }
+                    }, { //child 4 of harvey
+                      "name": "Lowell A. York",
+                      "class": "direct_man",
+                      "extra": {
+                        "years": "1907 - 1960",
+                        "link": "/lowell/"
+                      },
+                      "marriages": [{
+                        "spouse": {
+                          "name": "Loretta Rhoda May Davidson",
+                          "class": "woman",
+                          "extra": {
+                            "years": "1911 - 1989"
+                          }
+                        },
+                        "children": [{ //first child of Lowell
+                          "name": "Richard Glenn York",
+                          "class": "direct_man",
+                          "extra": {
+                            "years" : "1928 - 2005"
+                          },
+                          "marriages": [{
+                            "spouse": {
+                              "name": "Leona Pauline Reed",
+                              "class": "woman",
+                              "extra": {
+                                "years": "1930 - 1998"
+                              }
+                            },
+                            "children":[{ //first child of Richard G
+                              "name": "Richard Allan York",
+                              "class": "direct_man",
+                              "extra": {
+                                "years": "1949 - 2010",
+                                "link" : "/rick/"
+                              }
+                            }, { //second child of Richard G.
+                              "name": "Randall \"Randy\" York",
+                              "class": "man",
+                              "extra": {
+                                "years": "1952 - 1996"
+                              }
+                            }, { //third child of Richard G.
+                              "name": "Jeffrey York",
+                              "class": "man",
+                              "extra": {
+                                "years": "1953 - "
+                              }
+                            }] //end of Richard G children
+                          }] //end of Richard G marriages
+                        }, { //second child of Lowell
+                          "name": "Alma Roberta York",
+                          "class": "woman",
+                          "extra": {
+                            "years": "1930 - 2019"
+                          }
+                        }] //end of lowell's children
+                      }] //end of lowell's marriages
+                    }, { //child 5 of harvey
+                      "name": "Genevieve York",
+                      "class": "woman",
+                      "extra": {
+                        "years": "1913 - 1992"
+                      }
+                    }, { //child 6 of harvey
+                       "name": "Eva June York",
+                      "class": "woman",
+                      "extra": {
+                        "years": "1918 - 2005"
+                      }
+                    }, { //child 7 of harvey                     
+                      "name": "Edith York",
+                      "class": "woman",
+                      "extra": {
+                        "years": "1910 - ?"
+                      }
+                    }] //end of harvey's children
+                  }] //end of harvey's marriages
+
+                }, { //child 7 of doc
+                  "name": "Minerva Jane \"Kit\" York",
+                  "class": "woman",
+                  "extra": {
+                    "years": "1874 - ?"
+                  }
+                }, { //child 8 of doc
+                  "name": "Lewis York",
+                  "class": "man",
+                  "extra": {
+                    "years": "1876 - 1953"
+                  }
+                }] //end doc's children
+              }] //end doc's marriage
+
+            }, { //child 5 of marriage 1 of jeremiah
+              "name" : "Eliza Jane York",
+              "class": "woman",
+              "extra": {
+                "years": "1837 - 1858"
+              }
+            }, { //child 6 of marriage 1 of jeremiah
+              "name" : "Caroline York",
+              "class": "woman",
+              "extra": {
+                "years": "1838 - 1916"
+              }
+            }, { //child 7 of marriage 1 of jeremiah
+              "name" : "Infant York",
+              "class": "man",
+              "extra": {
+                "years": "1841 - 1841"
+              }
+            }, { //child 8 of marriage 1 of jeremiah
+              "name" : "Serepta York",
+              "class": "woman",
+              "extra": {
+                "years": "1844 - 1872"
+              }
+            }, { //child 9 of marriage 1 of jeremiah
+              "name" : "Nancy York",
+              "class": "woman",
+              "extra": {
+                "years": "1845 - 1845"
+              }
+            }]
+            }] //end of jeremiah's marriages
+
+
+
+
+
+        }, { //child 4 of newberry
+          "name": "Nicholas Slade York",
+          "class": "man",
+          "extra": {
+            "years": "1812 - 1901"
+          }
+
+        }, { //child 5 of newberry
+          "name": "Diadama York",
+          "class": "woman",
+          "extra": {
+            "years": "1815 - 1885"
+          }
+
+        }, { //child 6 of newberry
+          "name": "Jeptha York",
+          "class": "man",
+          "extra": {
+            "years": "1818 - 1843"
+          }
+
+        }, { //child 7 of newberry
+          "name": "Lewis York",
+          "class": "man",
+          "extra": {
+            "years": "1822 - ?"
+          }
+        }, { //child 8 of newberry
+          "name": "Rebecca York",
+          "class": "woman",
+          "extra": {
+            "years": "1824 - 1907"
+          }
+
+        }, { //child 9 of newberry
+          "name": "Newberry E. \"Squire\" York",
+          "class": "man",
+          "extra": {
+            "years": "1828 - 1876"
+          }
+
+        }] //end children of newberry
+      }]//end marraiges of newberry
+
+
+
+
+
+
+
+    }, { //child 5 of william
+      "name": "William York",
+      "class": "man",
+      "extra": {
+        "years": "1786 - 1799"
+      }
+    }, { //child 6 of william
+      "name": "Jeptha York",
+      "class": "man",
+      "extra": {
+        "years": "1788 - 1846"
+      }
+    }, { //child 7 of william
+      "name": "Mahala York",
+      "class": "woman",
+      "extra": {
+        "years": "1793 - 1828"
+      }
+    }, { //child 8 of william
+      "name": "Clementine York",
+      "class": "woman",
+      "extra": {
+        "years": "1795 - 1887"
+      }
+    }, { //child 9 of william
+      "name": "Diadama York",
+      "class": "woman",
+      "extra": {
+        "years": "1797 - 1858"
+      }
+
+    }, { //child 10 of william
+      "name": "Clarissa York",
+      "class": "woman",
+      "extra": {
+        "years": "1802 - ?"
+      }
+    }] //end children of william
+  }] //end marriages of william
+}]; //end of william and data
+
+var options = {
+  target: '#graph',
+  debug: false,
+  width: 1800,
+  height: 900,
+  callbacks: {
+              textRenderer: function(name, extra, textClass) {
+                if (extra) {
+                  // if (extra.years && extra.link) {
+                  //   return "<p align='center' class='" + textClass + "'> <a class='linkClass' href = "+buildLink(extra.link)+ ">" +name + "</a> </p> <p align='center' class='" + textClass +"'>"+ extra.years + "</p>";
+                  // }
+                  if (extra.years) {
+                    return "<p align='center' class='" + textClass + "'>" + name + "</p> <p align='center' class='" + textClass +"'>"+ extra.years + "</p>";
+                  }
+                  // if (extra.link) {
+                  //   return "<p align='center' class='" + textClass + "'> <a class='linkClass' href = "+buildLink(extra.link)+ ">"+name +"</a> </p>";
+                  // }
+
+                }
+                  //default
+                  return "<p align='center' class='" + textClass + "'>" + name + "</p>";
+              }
+    /*
+      Callbacks should only be overwritten on a need to basis.
+      See the section about callbacks below.
+    */
+  },
+  margin: {
+    top: -50,
+    right: 0,
+    bottom: 50,
+    left: 400
+  },
+  nodeWidth: 100,
+  styles: {
+    node: 'node',
+    linage: 'linage',
+    marriage: 'marriage',
+    text: 'nodeText'
+  }
+};
+dTree.init(data, options);
+} //end of ready function
+window.onload = ready;
+</script>
+
+<div id="graph"></div>
+
+<table>
+
+<h3>Legend</h3>
+<svg width="200" height="325"><g transform="translate(0,0)">
+
+
+<path class="linage" d="M0,50L150,50"></path>
+<foreignObject x="0px" y="25px" width="100px" height="36px" id="1"><p>Children</p></foreignObject>
+<path class="marriage" d="M0,100L150,100"></path>
+<foreignObject x="0px" y="75px" width="100px" height="36px" id="1"><p>Marriage</p></foreignObject>
+
+<foreignObject x="0px" y="150px" width="100px" height="54px" id="3"><div style="height:100%;width:100%;" class="direct_man" id="node1">
+<p class="nodeText" align="center">Direct Male Line</p> <p class="nodeText" align="center">Born - Died</p></div></foreignObject>
+
+<foreignObject x="0px" y="225px" width="100px" height="34px" id="4"><div style="height:100%;width:100%;" class="man" id="node4">
+<p class="nodeText" align="center">Male</p> <p class="nodeText" align="center">Born - Died</p></div></foreignObject>
+
+<foreignObject x="0px" y="275px" width="100px" height="34px" id="5"><div style="height:100%;width:100%;" class="woman" id="node3">
+<p class="nodeText" align="center">Female</p> <p class="nodeText" align="center">Born - Died</p></div></foreignObject>
+
+</g></svg>
+
+<h3>References</h3>
+<h4>Wally Garchow's genealogy works</h4>
+<a href="http://wally.dcoweb.org/darke/w-york2.htm">Descendants of William YORK</a><br>
+<a href="http://wally.dcoweb.org/darke/w-york1.htm">The YORKs of Darke Co., OH</a><br>
+<a href="http://wally.dcoweb.org/darke/w-ydocs1.htm">YORK FAMILY DOCUMENTS</a><br>
+<a href="http://dcoweb.org/fgs/query001.htm">Darke County, Ohio, Family Group Sheets</a>
+
+<h4>Lowell, Genevieve, and Harvey Glenn York's school photos, Webster, Ohio</h4>
+<a href=http://www.dcoweb.org/school/webster.htm>School #7, Wayne Township, Darke County, Ohio</a><br>
+<a href="http://www.dcoweb.org/school/web1920.htm">School #7, Wayne Township, Darke County, Ohio 1920/21</a><br>
+<a href="http://www.dcoweb.org/school/web1921.htm">School #7, Wayne Township, Darke County, Ohio 1921/22</a><br>
+<a href="http://www.dcoweb.org/school/web1922-3.htm">School #7, Wayne Township, Darke County, Ohio 1922-3</a><br>
+<a href="http://www.dcoweb.org/school/web1924b.htm">School #7, Wayne Township, Darke County, Ohio 1924/25</a><br>
+<a href="http://www.dcoweb.org/school/web1927.htm">School #7, Wayne Township, Darke County, Ohio 1927/28</a>
+
+
+<h4>FindAGrave.com Memorials</h4>
+<a href="https://www.findagrave.com/memorial/11461343">Pvt William York (1755-1839) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/6162129">Pvt Newberry York (1784-1866) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/5722763">Jeremiah “Jerry” York, Sr (1809-1862) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/6148750">John Glenn “Doc” York (1836-1908) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/19096773">Harve York (1871-1961) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/29274361">Lowell A York (1907-1960) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/17296755">Richard Glenn York (1928-2005) - Find A Grave Memorial</a><br>
+<a href="https://www.findagrave.com/memorial/49675313">Richard A. “Rick” York (1949-2010) - Find A Grave Memorial</a>
+
+<h4>Military Service Records</h4>
+<a href="static/militaryrecords/G11-484251763E.pdf">Newberry York Military Service Record for War of 1812</a><br>
+<a href="static/militaryrecords/WilliamYorkNoRecord.jpg">William York No Records Found from National Archives</a>
+
+<h4>Land Patents</h4>
+<a href="static/landpatents/CV_Patent_0072-399.PDF">Newberry York Land Patent 2589</a><br>
+<a href="static/landpatents/STA_Patent_OH1480__.293.PDF">Nicholas Slade York Land Patent 5325</a><br>
+<a href="static/landpatents/STA_Patent_OH1490__.184.PDF">Newberry York Land Patent 5716</a><br>
+<a href="static/landpatents/STA_Patent_OH1490__.185.PDF">William York Land Patent 5717</a><br>
+
+<h4>Death Certificates</h4>
+<a href="static/deathcerts/york1961.png">Harvey York Death Certificate</a><br>
+<a href="static/deathcerts/york1956.png">Lovina York (Wogaman) Death Certificate</a><br>
+<a href="static/deathcerts/york1954.png">Harvey Glenn York Death Certificate</a><br>
+<a href="static/deathcerts/york1960.png">Lowell York Death Certificate</a><br>
+
+<h4>Directories</h4>
+<a href="static/1910dir/Darke_County_Rural_Dir_1910.pdf">1910 Darke County Rural Directory</a><br>
+<a href="static/1910dir/119Versailles.jpg">1910 Darke County Rural Directory - Versailles - Page 119 - York</a><br>
+
+
+
+
+
+
+    <br class="clear">
+    <!-- END Content -->
+    </div>
+  </div>
+
+    <!-- <div class="footer">
+</div> -->
+
+
+<!-- END Container -->
+</div>
+
+</body>
+</html>
