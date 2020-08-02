@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-<title>CrazyFuzzy.com - Gadgets </title>
+<title>CrazyFuzzy.com - Countdown </title>
 <!-- 
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
@@ -23,6 +23,7 @@
                 });
             });
         </script>
+		<script type="text/javascript" src="static/jquery.countdown.js"></script>
 
 <div class="container">
   <div class="content-overlay">
@@ -33,58 +34,36 @@
       <a  href="index.html">Home</a>
 	  <a  href="solitaire.html">Solitaire</a>
 	  <a  href="dotsandboxes.html">Dots & Boxes</a>
-      <a  class="active" href="gadgets.html">Gadgets</a>
-	  <a  href="countdown.html">Countdown</a>
+      <a  href="gadgets.html">Gadgets</a>
+	  <a  class="active" href="countdown.html">Countdown</a>
       <a  href="york.html">York Family Tree</a>
       <a  href="about.html">About</a>
     </div>
 
-<h1 align="center">Gadgets</h1>
+<h1 align="center">Countdown</h1>
+<h2 align="center">Star Trek: Lower Decks</h2>
+<h4 align="center">Premiers August 6, 2020</h4>
     <div class="content">
 
     <!-- Content -->
     
 <div id="content-main">
 
-	
-<script type="text/javascript" src="static/timer.js"></script>
+<div align="center" id="clock" class="countdown" ></div>
 
-<h3>Timer</h3>
-<canvas id="canvas" width="400" height="400" style="background-color:black">
-</canvas>
-<br>
 
-<input type="text" id="hours" size=2>Hours</input>
-<input type="text" id="minutes" size=2>Minutes</input>
-<input type="text" id="seconds" size=2>Seconds</input>
 
-<input type="button" onclick="gogogo()" value="Start Timer">
 
 <script>
-	var canvas = document.getElementById("canvas");
-	var hoursInput = document.getElementById("hours");
-	var minutesInput = document.getElementById("minutes");
-	var secondsInput = document.getElementById("seconds");
-	function gogogo() {
-		var hours = parseInt(hoursInput.value)
-		if (isNaN(hours))
-			hours = 0;
-		var minutes = parseInt(minutesInput.value)
-		if (isNaN(minutes))
-			minutes = 0;
-		var seconds = parseInt(secondsInput.value)
-		if (isNaN(seconds))
-			seconds = 0;
-
-		var duration = hours*3600 + minutes*60 + seconds;
-		if (duration > 0)
-			startTimer(canvas, duration);
-	}
-	resetClock(canvas);
+$('#clock').countdown('2020/8/6', function(event) {
+  var $this = $(this).html(event.strftime(''
+   // + '<span>%w</span> weeks '
+    + '<span>%d</span> days '
+    + '<span>%H</span> hr '
+    + '<span>%M</span> min '
+    + '<span>%S</span> sec'));
+});
 </script>
-
-<h3>Chat</h3>
-<a href = "chat.html">Chat client</a>
 
 
 

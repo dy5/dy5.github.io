@@ -121,10 +121,18 @@ a:active {
 }
 
 .content {
-    display: inline-block;
+    /*display: inline-block;*/
     position: relative;
     /*top: 20%;*/
     /*transform: translateY(20%);*/
+}
+
+.countdown {
+	margin: auto;
+	text-align: center;
+	font-family: 'Michroma', sans-serif;
+    color: #fdff2b;
+	display: block;
 }
 
 
