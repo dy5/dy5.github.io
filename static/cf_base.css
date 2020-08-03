@@ -91,6 +91,12 @@ table {
   color: white;
 }
 
+th {
+  font-family: 'Michroma', sans-serif;
+  color: #fdff2b;
+  text-align: left;
+}
+
 a {
     color: #01E2FE;
 }
@@ -133,6 +139,28 @@ a:active {
 	font-family: 'Michroma', sans-serif;
     color: #fdff2b;
 	display: block;
+}
+
+.prime-number {
+    font-family: 'Courier-New';
+    color: #fdff2b;
+	max-width: 1000px;
+	min-width: 500px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  /*padding: 10px;*/
+  /*height: 300px; *//* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
